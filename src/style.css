@@ -1,0 +1,49 @@
+body {
+    margin-top: 10%;
+    text-align: center;
+    /*Alinea todos los componentes horizontalmente*/
+    /*font-family: sans-serif;*/
+}
+
+#validar {
+    display: none;
+}
+
+#validar-nuevo {
+    display: none;
+}
+
+#contenido {
+    background: #76d7c4;
+    max-width: 700px;
+    padding: 30px 30px 30px 30px;
+    margin: 0 auto;
+    border-radius: 30px 0px 30px 0px;
+}
+
+img {
+    width: 300px;
+    height: 225px;
+}
+
+#cargar-tarjeta {
+    border: 2px solid #f1c40f;
+    border-radius: 20px;
+    background-color: #196f3d;
+    color: white;
+    padding: 16px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+#l {
+    color: #f1c40f;
+}
+
+#coin {
+    color: #196f3d;
+}
+
+footer {
+    margin-top: 10px;
+}

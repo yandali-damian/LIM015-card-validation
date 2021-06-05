@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+</head>
+
+<body>
+    <header>
+        <h1 id="coin">Coin</h1>
+        <h1 id="l">
+            &lt; L &gt;
+        </h1>
+    </header>
+
+    <main>
+        <div id="contenido">
+            <div id="presentacion">
+                <img id="imgTarjeta" src="img/tarjeta.png" alt=""><br><br>
+                <button id="cargar-tarjeta"> Cargar Tarjeta </button>
+            </div>
+
+            <div id="validar">
+                <form id="frmValidarTarjeta">
+                    <h1 id="">Validar Tarjeta de credito</h1>
+                    <h2 id="">Antes de proceder con sus pagos favor de validar su tarjeta</h2>
+                    <input type="text" id="numero-tarjeta" maxlength="16" placeholder="Número de Tarjeta" name="numero-tarjeta" onpaste=" return true">
+                    <input type="text" id="nombre" placeholder="Nombre">
+                    <br><br>
+                    <input type="text" id="fecha-tarjeta" placeholder="MM/AA">
+                    <input type="text" id="cvv-tarjeta" placeholder="CVV" maxlength="3"><br><br>
+                    <button id="btn-validar"> Validar</button>
+                </form>
+            </div>
+            <div id="validar-nuevo">
+                <h1 id="nombre-usuario">Hola <span id="validar-nombre"> </span></h1>
+                <p id="num-tarjeta"></p>
+                <br>
+                <p id="resultado-tarjeta"></p>
+                <button id="nueva-tarjeta"> Validar Nueva tarjeta</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        Copyright &copy; coinl.pe - Todos los derechos reservados
+    </footer>
+
     <script src="index.js" type="module"></script>
-  </body>
+
+
+</body>
+
 </html>
