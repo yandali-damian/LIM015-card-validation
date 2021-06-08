@@ -3,7 +3,7 @@ import validator from './validator.js';
 //console.log(validator);
 
 //pruebas unitarias
-var test = '4556364607935606';
+const test = '2234444606';
 console.log(validator.isValid(test));
 console.log(validator.maskify(test));
 
@@ -34,8 +34,12 @@ document.getElementById("btn-validar").addEventListener("click", (e) => {
     if (isValid) {
         mensajeValid = "Valido";
     }
-
     document.getElementById("resultado-tarjeta").innerHTML = "La tarjeta ingresada es: " + mensajeValid;
+    //enmascarar numero de tarjeta
+    var maskify = validator.maskify(creditCardNumber);
+    document.getElementById("num-tarjeta").innerHTML = maskify;
+
+
 });
 
 //manejo de boton Validar nueva Tarjeta
@@ -50,8 +54,9 @@ document.getElementById("nueva-tarjeta").addEventListener("click", () => {
 
 //funcion para validar que el input solo acepte numeros
 document.getElementById("numero-tarjeta").addEventListener("keypress", function(event) {
+    //primer parametro reconocer que evento va a realizar, segun lo que realice el siguiente parametro va a ejecutar 
     function solonumeros(evt) {
-        let charCode = (evt.which) ? evt.which : evt.keyCode;
+        let charCode = (evt.which) ? evt.which : evt.keyCode; // charCode recupera lo escrito "? if coto"
         if (charCode == 46 || charCode > 31 && (charCode < 48 || charCode > 57)) {
             evt.preventDefault();
             return false;

@@ -1,14 +1,14 @@
-const validator = {
+const validator = { //creamos el objeto validator
     // ...
     isValid(creditCardNumber) {
-        const array = creditCardNumber.split(""); //cada digito de la tarjeta colocamos en un array
-        var sumaTotal = 0;
+        let array = creditCardNumber.split(""); //cada digito de la tarjeta colocamos en un array
+        let sumaTotal = 0;
         //aqui se llena el algoritmo
         let arrayInvertido = array.reverse(); //invertimos el array
 
-        for (let i = 0; i < arrayInvertido.length; i++) {
+        for (let i = 0; i < arrayInvertido.length; i++) { // 0 1 2 3  // 5849
             if (i % 2 != 0) {
-                var opr = parseInt(arrayInvertido[i]) * 2;
+                let opr = parseInt(arrayInvertido[i]) * 2;
 
                 if (opr >= 10) {
                     opr = sumDigits(opr);
@@ -22,7 +22,7 @@ const validator = {
         }
 
 
-        var result = sumaTotal % 10;
+        let result = sumaTotal % 10;
 
         if (result == 0)
             return true;
@@ -31,17 +31,24 @@ const validator = {
 
     },
 
-    maskify(creditCardNumber) {
+    maskify(test) {
+        let nummak = "";
 
-        //se mostrara los cuatro ultimos digitos de la tarjeta
-        return '############5616';
+        for (let i = 0; i < test.length; i++) {
+            if (i <= test.length - 5) {
+                nummak = nummak + "#";
+            } else {
+                nummak = nummak + test[i];
+            }
+        }
+        return nummak;
     }
 };
 
-function sumDigits(n) {
-    let numArr = n.toString().split("");
+function sumDigits(n) { //funcion para sumar los digitos
+    let numArray = n.toString().split("");
 
-    let sum = numArr.reduce(function(a, b) {
+    let sum = numArray.reduce(function(a, b) {
         return parseInt(a) + parseInt(b);
     }, 0);
 

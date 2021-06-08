@@ -5,7 +5,7 @@
     "type": "module",
     "license": "MIT",
     "scripts": {
-        "hi": "htmlhint src/*.html test/*.html",
+        "htmlhint": "htmlhint src/*.html test/*.html",
         "eslint": "eslint --ext .js src/ test/",
         "pretest": "npm run eslint && npm run htmlhint",
         "test": "jest --verbose --coverage",
