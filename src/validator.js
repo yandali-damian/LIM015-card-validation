@@ -31,14 +31,14 @@ const validator = { //creamos el objeto validator
 
     },
 
-    maskify(test) {
+    maskify(maskify) {
         let nummak = "";
 
-        for (let i = 0; i < test.length; i++) {
-            if (i <= test.length - 5) {
+        for (let i = 0; i < maskify.length; i++) {
+            if (i <= maskify.length - 5) {
                 nummak = nummak + "#";
             } else {
-                nummak = nummak + test[i];
+                nummak = nummak + maskify[i];
             }
         }
         return nummak;

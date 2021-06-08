@@ -3,9 +3,9 @@ import validator from './validator.js';
 //console.log(validator);
 
 //pruebas unitarias
-const test = '2234444606';
-console.log(validator.isValid(test));
-console.log(validator.maskify(test));
+//const test = '2234444606';
+//console.log(validator.isValid(test));
+//console.log(validator.maskify(test));
 
 //manejo del input
 document.getElementById("cargar-tarjeta").addEventListener("click", () => {
