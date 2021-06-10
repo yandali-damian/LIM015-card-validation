@@ -1,22 +1,33 @@
 const validator = { //creamos el objeto validator
     // ...
-    isValid(creditCardNumber) {
+    isValid(creditCardNumber) { //validamos el numero ingresado
+        if (creditCardNumber.length == 0) //validando campo vacio
+            return false;
+
         let array = creditCardNumber.split(""); //cada digito de la tarjeta colocamos en un array
         let sumaTotal = 0;
         //aqui se llena el algoritmo
         let arrayInvertido = array.reverse(); //invertimos el array
 
-        for (let i = 0; i < arrayInvertido.length; i++) { // 0 1 2 3  // 5849
-            if (i % 2 != 0) {
-                let opr = parseInt(arrayInvertido[i]) * 2;
+        for (let i = 0; i < arrayInvertido.length; i++) { // recorremos el arreglo invertido
+            if (i % 2 != 0) { //verificamos si es una posicion par
+                let opr = parseInt(arrayInvertido[i]) * 2; //recupera un numero de latarjeta segun la posiscion del arreglo
 
                 if (opr >= 10) {
-                    opr = sumDigits(opr);
+                    let numArray = opr.toString().split("");
+                    let sumaDigitos = 0;
+                    // opr = numArray.reduce(function(a, b) { //en la fncion reduce sumamos los elementos del arreglo donde a=acumulador y b=valor actual
+                    //     return parseInt(a) + parseInt(b);
+                    // }, 0);
+                    for (let index = 0; index < numArray.length; index++) {
+                        sumaDigitos = sumaDigitos + parseInt(numArray[index]);
+                    }
+                    opr = sumaDigitos;
                 }
 
-                sumaTotal = sumaTotal + opr;
+                sumaTotal = sumaTotal + opr; //incremento mi contador 
             } else {
-                sumaTotal = sumaTotal + parseInt(arrayInvertido[i]);
+                sumaTotal = sumaTotal + parseInt(arrayInvertido[i]); //incremento mi contador 
             }
 
         }
@@ -32,27 +43,18 @@ const validator = { //creamos el objeto validator
     },
 
     maskify(maskify) {
-        let nummak = "";
+        let nummask = "";
 
-        for (let i = 0; i < maskify.length; i++) {
+        for (let i = 0; i < maskify.length; i++) { // capturamos la cantidada de caracteres ingresados
             if (i <= maskify.length - 5) {
-                nummak = nummak + "#";
+                nummask = nummask + "#"; //empezamos a concatenar
             } else {
-                nummak = nummak + maskify[i];
+                nummask = nummask + maskify[i];
             }
         }
-        return nummak;
+        return nummask;
     }
 };
 
-function sumDigits(n) { //funcion para sumar los digitos
-    let numArray = n.toString().split("");
-
-    let sum = numArray.reduce(function(a, b) {
-        return parseInt(a) + parseInt(b);
-    }, 0);
-
-    return sum;
-}
 
 export default validator;
