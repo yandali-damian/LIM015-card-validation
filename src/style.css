@@ -5,10 +5,7 @@ body {
     /*font-family: sans-serif;*/
 }
 
-#validar {
-    display: none;
-}
-
+#validar,
 #validar-nuevo {
     display: none;
 }
@@ -26,7 +23,7 @@ img {
     height: 225px;
 }
 
-#cargar-tarjeta {
+.boton {
     border: 2px solid #f1c40f;
     border-radius: 20px;
     background-color: #196f3d;

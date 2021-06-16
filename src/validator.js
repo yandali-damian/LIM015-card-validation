@@ -5,9 +5,8 @@ const validator = { //creamos el objeto validator
             return false;
 
         let array = creditCardNumber.split(""); //cada digito de la tarjeta colocamos en un array
-        let sumaTotal = 0;
-        //aqui se llena el algoritmo
         let arrayInvertido = array.reverse(); //invertimos el array
+        let sumaTotal = 0;
 
         for (let i = 0; i < arrayInvertido.length; i++) { // recorremos el arreglo invertido
             if (i % 2 != 0) { //verificamos si es una posicion par

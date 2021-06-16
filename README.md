@@ -410,3 +410,8 @@ Esta sección está para ayudarte a llevar un control de lo que vas completando.
 
 * [ ] Implementa `validator.getIssuer`.
 * [ ] Interfaz muestra la franquicia de la tarjeta
+
+________________________________________________
+
+enlaces donde investigue 
+https://uniwebsidad.com/libros/css/capitulo-2/selectores-basicos

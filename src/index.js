@@ -3,8 +3,8 @@ import validator from './validator.js';
 //console.log(validator);
 
 //pruebas unitarias
-const test = '2234444606';
-//console.log(validator.isValid(test));
+const creditCard = '5376555669842211';
+console.log(validator.isValid(creditCard));
 //console.log(validator.maskify(test));
 
 //manejo del input
