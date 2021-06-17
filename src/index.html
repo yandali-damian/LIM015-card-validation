@@ -8,24 +8,38 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="coin">Coin</h1>
-        <h1 id="l">
-            &lt; L &gt;
-        </h1>
+    <header id="logo">
+        <nav>
+            <ul>
+                <li>
+                    <div class="capa-ico"><img class="ico" src="img/ico-ini.png"></div>Inicio</li>
+                <li>
+                    <div class="capa-ico"><img class="ico" src="img/ico-link.png"></div>Enlaces</li>
+                <li>
+                    <div class="capa-ico"><img class="ico" src="img/ico-dwd.png"></div>Descargas</li>
+                <li>
+                    <div class="capa-ico"><img class="ico" src="img/ico-sm.png"></div>Sobre Mi</li>
+                <li>
+                    <div class="capa-ico"><img class="ico" src="img/ico-ctc.png"></div>Contacto</li>
+            </ul>
+        </nav>
+
+        <img src="img/logo2.png" alt="" id="logocabeza">
     </header>
+
+
 
     <main>
         <div id="contenido">
             <div id="presentacion">
-                <img id="imgTarjeta" src="img/tarjeta.png" alt=""><br><br>
+                <img src="img/logo2.png" alt=""><br><br>
                 <button id="cargar-tarjeta" class="boton"> Cargar Tarjeta </button>
             </div>
 
             <div id="validar">
                 <form id="frmValidarTarjeta">
                     <h1 id="">Validar Tarjeta de credito</h1>
-                    <h2 id="">Antes de proceder con sus pagos favor de validar su tarjeta</h2>
+                    <h3 id="">Para continuar, valide la tarjeta</h3>
                     <input type="text" id="numero-tarjeta" maxlength="16" placeholder="Número de Tarjeta" name="numero-tarjeta" onpaste=" return true">
                     <input type="text" id="nombre" placeholder="Nombre">
                     <br><br>
@@ -40,13 +54,14 @@
                 <p id="num-tarjeta"></p>
                 <p id="resultado-tarjeta"></p>
                 <button id="nueva-tarjeta" class="boton"> Validar Nueva tarjeta</button>
+                <button id="btn-salir" class="boton"> salir</button>
             </div>
 
         </div>
     </main>
 
     <footer>
-        Copyright &copy; coinl.pe - Todos los derechos reservados
+        Copyright &copy; qori.com.pe - Todos los derechos reservados
     </footer>
 
     <script src="index.js" type="module"></script>

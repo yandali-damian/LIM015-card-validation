@@ -415,3 +415,6 @@ ________________________________________________
 
 enlaces donde investigue 
 https://uniwebsidad.com/libros/css/capitulo-2/selectores-basicos
+
+para hacer logo
+https://editor.freelogodesign.org/es/logo/edit/b3784f1710bb4d86b183847bcd4549f6?template=1289&category=1&companyName=Q%27ORI

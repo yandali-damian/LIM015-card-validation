@@ -9,6 +9,7 @@ console.log(validator.isValid(creditCard));
 
 //manejo del input
 document.getElementById("cargar-tarjeta").addEventListener("click", () => {
+    document.getElementById("logocabeza").style.display = "block";
     document.getElementById("validar").style.display = "block";
     document.getElementById("validar-nuevo").style.display = "none";
     document.getElementById("presentacion").style.display = "none";
@@ -50,6 +51,7 @@ document.getElementById("btn-validar").addEventListener("click", (e) => {
         document.getElementById("num-tarjeta").innerHTML = maskify;
     }
     // mostramos y ocultamos el div 
+    document.getElementById("logocabeza").style.display = "block";
     document.getElementById("presentacion").style.display = "none";
     document.getElementById("validar").style.display = "none";
     document.getElementById("validar-nuevo").style.display = "block";
@@ -62,9 +64,10 @@ document.getElementById("btn-validar").addEventListener("click", (e) => {
 
 //manejo de boton Validar nueva Tarjeta
 document.getElementById("nueva-tarjeta").addEventListener("click", () => {
-    document.getElementById("presentacion").style.display = "block";
+    document.getElementById("logocabeza").style.display = "block";
+    document.getElementById("presentacion").style.display = "none";
     document.getElementById("validar-nuevo").style.display = "none";
-    document.getElementById("validar").style.display = "none";
+    document.getElementById("validar").style.display = "block";
 
     //Limpiar contenido
     document.getElementById("frmValidarTarjeta").reset();

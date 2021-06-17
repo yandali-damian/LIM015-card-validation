@@ -1,8 +1,12 @@
 body {
-    margin-top: 10%;
+    /* margin-top: 10%; */
     text-align: center;
     /*Alinea todos los componentes horizontalmente*/
-    /*font-family: sans-serif;*/
+    font-family: sans-serif;
+}
+
+main {
+    width: 50px%;
 }
 
 #validar,
@@ -10,12 +14,22 @@ body {
     display: none;
 }
 
+#logocabeza {
+    display: none;
+    width: 150px;
+    height: 125px;
+    margin-top: 25px;
+    max-width: 700px;
+}
+
 #contenido {
-    background: #76d7c4;
+    background: #f0f2f6;
     max-width: 700px;
     padding: 30px 30px 30px 30px;
     margin: 0 auto;
-    border-radius: 30px 0px 30px 0px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 2px 2px 6px 6px #cccfd1;
+    margin-top: 80px;
 }
 
 img {
@@ -24,23 +38,103 @@ img {
 }
 
 .boton {
-    border: 2px solid #f1c40f;
-    border-radius: 20px;
-    background-color: #196f3d;
+    border: 2px solid #0795FC;
+    border-radius: 30px;
+    background-color: #0795FC;
     color: white;
     padding: 16px 32px;
     font-size: 16px;
     margin: 4px 2px;
 }
 
-#l {
-    color: #f1c40f;
-}
-
-#coin {
-    color: #196f3d;
-}
-
 footer {
-    margin-top: 10px;
+    /* margin-top: 10px; 
+    margin-top: 50px;
+    padding: 5px 0;
+    background: #090C14;
+    color: #fff;*/
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 16px;
+    background: #f0f2f6;
+    border-top: 2px solid rgb(3, 183, 255);
+}
+
+
+/*MENU DE NAVEGACION*/
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: #f0f2f6;
+    /*para quitar la letra al momento de poner el cursor */
+    overflow: hidden;
+    /*para darle transparencia*/
+    opacity: 0.8;
+    transition-duration: 0.6s;
+}
+
+
+/*aplicamos un seudo clase*/
+
+nav:hover {
+    opacity: 1;
+}
+
+ul {
+    margin: 0;
+}
+
+li {
+    float: left;
+    width: 18%;
+    /* color: #555;
+    text-align: center; */
+    /*eliminar los puntos de la lista*/
+    list-style: none;
+    /*para subir hacia arriba las imagenes*/
+    margin-top: -30px;
+    /*para cambiar la velocidada de la imagen al colocar el cursor*/
+    transition-duration: 0.6s;
+}
+
+
+/*al poner el cursor se muestre la imagen y se coloca hacia abajo*/
+
+li:hover {
+    margin-top: 15px;
+}
+
+.ico {
+    width: 40px;
+    height: 40px;
+}
+
+.capa-ico {
+    width: 100%;
+    height: 30px;
+    /*flota hacia la izquierda*/
+    float: left;
+    /*para que se coloque en el centro*/
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    position: relative;
+    top: -15px;
+}
+
+nav+div {
+    width: 85%;
+    height: auto;
+    margin: 0 auto;
+    border: 6px solid #999;
+    border-radius: 10px 80px 80px 10px;
+    border-top: 2px solid rgb(3, 183, 255);
+    background-color: #fff;
+    margin-top: 300px;
+    padding: 20px 5px 20px 5px;
+    text-align: justify;
+    opacity: 0.9;
+    transition-duration: 0.6s;
 }
