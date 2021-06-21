@@ -1,8 +1,6 @@
 const validator = { //creamos el objeto validator
     // ...
     isValid(creditCardNumber) { //validamos el numero ingresado
-        // if (creditCardNumber.length == 0) //validando campo vacio
-        //     return false;
 
         let array = creditCardNumber.split(""); //cada digito de la tarjeta colocamos en un array
         let arrayInvertido = array.reverse(); //invertimos el array
@@ -15,7 +13,7 @@ const validator = { //creamos el objeto validator
                 if (opr >= 10) {
                     let numArray = opr.toString().split("");
                     let sumaDigitos = 0;
-                    // opr = numArray.reduce(function(a, b) { //en la fncion reduce sumamos los elementos del arreglo donde a=acumulador y b=valor actual
+                    // opr = numArray.reduce(function(a, b) { //en la funcion reduce sumamos los elementos del arreglo donde a=acumulador y b=valor actual
                     //     return parseInt(a) + parseInt(b);
                     // }, 0);
                     for (let index = 0; index < numArray.length; index++) {
@@ -53,17 +51,18 @@ const validator = { //creamos el objeto validator
         }
         return nummask;
     },
+
     getIssuer(creditCardNumber) {
         //Validar tipo de tarjeta
-        let mensajetipotarjeta = "";
+        let getIssuer = "";
 
         if (creditCardNumber[0] == "4") {
-            mensajetipotarjeta = "Visa";
+            getIssuer = "Visa";
         } else if ((creditCardNumber[0] == "5" && creditCardNumber[1] == "1") || (creditCardNumber[0] == "5" && creditCardNumber[1] == "5")) {
-            mensajetipotarjeta = "MasterCard";
+            getIssuer = "MasterCard";
         }
 
-        return mensajetipotarjeta;
+        return getIssuer;
     }
 };
 

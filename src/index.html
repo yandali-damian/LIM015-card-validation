@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <!-- menú de vanegacion -->
     <header id="logo">
         <nav>
             <ul>
@@ -23,23 +24,26 @@
                     <div class="capa-ico"><img class="ico" src="img/ico-ctc.png"></div>Contacto</li>
             </ul>
         </nav>
-
+        <!-- logo de marca para las ventanas -->
         <img src="img/logo5.png" alt="" id="logocabeza">
     </header>
 
 
-
+    <!-- contenido de las diferentes ventanas -->
     <main id="contenido">
+
+        <!-- ventana de presentacion -->
         <div id="presentacion">
             <img src="img/logo5.png" alt=""><br><br>
             <button id="cargar-tarjeta" class="boton"> Cargar Tarjeta </button>
         </div>
 
+        <!-- ventana donde se ingresa los datos para poder validar -->
         <section id="validar">
             <form id="frmValidarTarjeta">
                 <h1 id="">Validar Tarjeta de credito</h1>
                 <h3 id="">Para continuar, valide la tarjeta</h3>
-                <input type="text" id="numero-tarjeta" maxlength="16" placeholder="Número de Tarjeta" name="numero-tarjeta" onpaste=" return true">
+                <input type="text" id="numero-tarjeta" maxlength="16" placeholder="Número de Tarjeta">
                 <input type="text" id="nombre" placeholder="Nombre">
                 <br><br>
                 <input type="text" id="fecha-tarjeta" placeholder="MM/AA">
@@ -47,16 +51,19 @@
                 <button id="btn-validar" class="boton"> Validar</button>
             </form>
         </section>
+
+        <!-- ventana donde nos muestra el resultado de valicacion -->
         <div id="validar-nuevo">
             <h1 id="nombre-usuario">Hola <span id="validar-nombre"> </span></h1>
             <p id="tipoTarjeta"></p>
             <p id="num-tarjeta"></p>
             <p id="resultado-tarjeta"></p>
-            <button id="nueva-tarjeta" class="boton"> Validar Nueva tarjeta</button>
+            <button id="nueva-tarjeta" class="boton"> Validar tarjeta</button>
             <button id="btn-salir" class="boton"> salir</button>
         </div>
     </main>
 
+    <!-- pie de nuestra ventana -->
     <footer>
         Copyright &copy; qori.com.pe - Todos los derechos reservados
     </footer>

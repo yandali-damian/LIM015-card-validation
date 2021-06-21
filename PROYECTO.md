@@ -2,13 +2,13 @@
 
 ## Índice
 
-* [1. Autor](#autor)
-* [2. Titulo Del Proyecto](#Titulo-Del-Proyecto)
-* [3. Descripción](#Descripción)
-* [4. Construcción](#Construcción)
-* [5. Diseño](#Diseño)
-* [6. Bibliografia](#Bibliografian)
-* [7. Agradecimiento](#Agradecimiento)
+* [1. Autor](#1-autor)
+* [2. Titulo Del Proyecto](#2-Titulo-Del-Proyecto)
+* [3. Descripción](#3-Descripción)
+* [4. Construcción](#4-Construcción)
+* [5. Diseño](#5-Diseño)
+* [6. Bibliografia](#6-Bibliografian)
+* [7. Agradecimiento](#7-agradecimiento)
 
 ## 1. Autor ✒️
 

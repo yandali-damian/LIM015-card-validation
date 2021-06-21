@@ -1,6 +1,6 @@
 import validator from './validator.js';
 
-//creamos la funcion para el boton  "cargar tarjeta"
+//funcion para el boton  "cargar-tarjeta"
 document.getElementById("cargar-tarjeta").addEventListener("click", () => {
     /* buscar el boton por el ID e implementar su evento click*/
     document.getElementById("logocabeza").style.display = "block";
@@ -10,34 +10,35 @@ document.getElementById("cargar-tarjeta").addEventListener("click", () => {
 
 });
 
-//creamos la funcion para el boton  "validar tarjeta"
+//funcion para el boton  "validar tarjeta"
 document.getElementById("btn-validar").addEventListener("click", (e) => {
-    //(e): parametro para acceder a los metodos del evento
     e.preventDefault();
-    //Evita que vaya a la accion del formulario (form)
-    let creditCardNumber = document.getElementById("numero-tarjeta").value; /* caturamos el valor del parametro */
+    //(e): parametro para acceder a los metodos del evento y detener una acción
+    let creditCardNumber = document.getElementById("numero-tarjeta").value;
+    /* caturamos el valor del parametro */
     let cvvTarjeta = document.getElementById("cvv-tarjeta").value;
 
     if (creditCardNumber == "" || cvvTarjeta == "") {
         alert("LLene los campos solicitados");
-        return;
+        return; // termina la funcion
     }
 
-    let mensajetipotarjeta = validator.getIssuer(creditCardNumber);
-    let validotipotarjeta = true;
-
-    if (mensajetipotarjeta == "") {
+    let getIssuer = validator.getIssuer(creditCardNumber);
+    //ingresamos al metodo getIssuer para veficar la franquicia  de la tarjeta
+    let validotipotarjeta = true; //declaramos una variable booleana
+    if (getIssuer == "") {
         document.getElementById("tipoTarjeta").innerHTML = "Por ahora no se acepta el tipo de tarjeta, recomendamos ingresar MasterCard o Visa";
         validotipotarjeta = false;
     } else {
-        document.getElementById("tipoTarjeta").innerHTML = "Tipo Tarjeta : " + mensajetipotarjeta;
+        document.getElementById("tipoTarjeta").innerHTML = "Tipo Tarjeta : " + getIssuer;
     }
 
     if (validotipotarjeta) {
-        //validar tarjeta correcta o incorrecta
 
         let isValid = validator.isValid(creditCardNumber);
+        //ingresamos al objeto y a la funcion y almacenamos el  resultado en una variable
         let mensajeValid = "Invalido";
+        //declaro la variable para el resultado 
 
         if (isValid) {
             mensajeValid = "Valido";
@@ -47,6 +48,7 @@ document.getElementById("btn-validar").addEventListener("click", (e) => {
 
         //enmascarar numero de tarjeta
         let maskify = validator.maskify(creditCardNumber);
+        //ingresamos al objeto y a la funcion y almacenamos el  resultado en una variable
         document.getElementById("num-tarjeta").innerHTML = maskify;
     }
     // mostramos y ocultamos el div 
@@ -72,7 +74,6 @@ document.getElementById("nueva-tarjeta").addEventListener("click", () => {
     document.getElementById("frmValidarTarjeta").reset();
     document.getElementById("num-tarjeta").innerHTML = "";
     document.getElementById("resultado-tarjeta").innerHTML = "";
-    //metodo reset() limpiamos el contedido de html
 });
 
 
@@ -86,7 +87,6 @@ document.getElementById("btn-salir").addEventListener("click", () => {
     document.getElementById("frmValidarTarjeta").reset();
     document.getElementById("num-tarjeta").innerHTML = "";
     document.getElementById("resultado-tarjeta").innerHTML = "";
-    //metodo reset() limpiamos el contedido de html
 });
 
 //funcion para validar que el input solo acepte numeros
@@ -95,7 +95,7 @@ document.getElementById("numero-tarjeta").addEventListener("keypress", function(
     function solonumeros(evt) {
         let charCode = (evt.which) ? evt.which : evt.keyCode;
         // charCode recupera lo escrito "? if coto"
-        if (charCode == 46 || charCode > 31 && (charCode < 48 || charCode > 57)) {
+        if ((charCode == 46 || charCode > 31) && (charCode < 48 || charCode > 57)) {
             evt.preventDefault();
             return false;
         }
