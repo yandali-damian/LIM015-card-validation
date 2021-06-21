@@ -24,39 +24,36 @@
             </ul>
         </nav>
 
-        <img src="img/logo2.png" alt="" id="logocabeza">
+        <img src="img/logo5.png" alt="" id="logocabeza">
     </header>
 
 
 
-    <main>
-        <div id="contenido">
-            <div id="presentacion">
-                <img src="img/logo2.png" alt=""><br><br>
-                <button id="cargar-tarjeta" class="boton"> Cargar Tarjeta </button>
-            </div>
+    <main id="contenido">
+        <div id="presentacion">
+            <img src="img/logo5.png" alt=""><br><br>
+            <button id="cargar-tarjeta" class="boton"> Cargar Tarjeta </button>
+        </div>
 
-            <div id="validar">
-                <form id="frmValidarTarjeta">
-                    <h1 id="">Validar Tarjeta de credito</h1>
-                    <h3 id="">Para continuar, valide la tarjeta</h3>
-                    <input type="text" id="numero-tarjeta" maxlength="16" placeholder="Número de Tarjeta" name="numero-tarjeta" onpaste=" return true">
-                    <input type="text" id="nombre" placeholder="Nombre">
-                    <br><br>
-                    <input type="text" id="fecha-tarjeta" placeholder="MM/AA">
-                    <input type="text" id="cvv-tarjeta" placeholder="CVV" maxlength="3"><br><br>
-                    <button id="btn-validar" class="boton"> Validar</button>
-                </form>
-            </div>
-            <div id="validar-nuevo">
-                <h1 id="nombre-usuario">Hola <span id="validar-nombre"> </span></h1>
-                <p id="tipoTarjeta"></p>
-                <p id="num-tarjeta"></p>
-                <p id="resultado-tarjeta"></p>
-                <button id="nueva-tarjeta" class="boton"> Validar Nueva tarjeta</button>
-                <button id="btn-salir" class="boton"> salir</button>
-            </div>
-
+        <section id="validar">
+            <form id="frmValidarTarjeta">
+                <h1 id="">Validar Tarjeta de credito</h1>
+                <h3 id="">Para continuar, valide la tarjeta</h3>
+                <input type="text" id="numero-tarjeta" maxlength="16" placeholder="Número de Tarjeta" name="numero-tarjeta" onpaste=" return true">
+                <input type="text" id="nombre" placeholder="Nombre">
+                <br><br>
+                <input type="text" id="fecha-tarjeta" placeholder="MM/AA">
+                <input type="text" id="cvv-tarjeta" placeholder="CVV" maxlength="3"><br><br>
+                <button id="btn-validar" class="boton"> Validar</button>
+            </form>
+        </section>
+        <div id="validar-nuevo">
+            <h1 id="nombre-usuario">Hola <span id="validar-nombre"> </span></h1>
+            <p id="tipoTarjeta"></p>
+            <p id="num-tarjeta"></p>
+            <p id="resultado-tarjeta"></p>
+            <button id="nueva-tarjeta" class="boton"> Validar Nueva tarjeta</button>
+            <button id="btn-salir" class="boton"> salir</button>
         </div>
     </main>
 

@@ -1,14 +1,8 @@
 import validator from './validator.js';
 
-//console.log(validator);
-
-//pruebas unitarias
-const creditCard = '5376555669842211';
-console.log(validator.isValid(creditCard));
-//console.log(validator.maskify(test));
-
-//manejo del input
+//creamos la funcion para el boton  "cargar tarjeta"
 document.getElementById("cargar-tarjeta").addEventListener("click", () => {
+    /* buscar el boton por el ID e implementar su evento click*/
     document.getElementById("logocabeza").style.display = "block";
     document.getElementById("validar").style.display = "block";
     document.getElementById("validar-nuevo").style.display = "none";
@@ -16,34 +10,39 @@ document.getElementById("cargar-tarjeta").addEventListener("click", () => {
 
 });
 
-//manejo de boton Validar 
+//creamos la funcion para el boton  "validar tarjeta"
 document.getElementById("btn-validar").addEventListener("click", (e) => {
     //(e): parametro para acceder a los metodos del evento
     e.preventDefault();
     //Evita que vaya a la accion del formulario (form)
-    let creditCardNumber = document.getElementById("numero-tarjeta").value;
-    //Validar tipo de tarjeta
-    let mensajetipotarjeta = "";
-    let validotipotarjeta = true;
-    if (creditCardNumber[0] === "4") {
-        mensajetipotarjeta = "Visa";
-    } else if (creditCardNumber[0] === "5") {
-        mensajetipotarjeta = "MasterCard";
-    } else {
-        mensajetipotarjeta = "Por ahora no se acepta el tipo de trajeta, recomendamos ingresar MasterCard o Visa";
-        validotipotarjeta = false;
+    let creditCardNumber = document.getElementById("numero-tarjeta").value; /* caturamos el valor del parametro */
+    let cvvTarjeta = document.getElementById("cvv-tarjeta").value;
 
+    if (creditCardNumber == "" || cvvTarjeta == "") {
+        alert("LLene los campos solicitados");
+        return;
     }
 
-    document.getElementById("tipoTarjeta").innerHTML = mensajetipotarjeta;
+    let mensajetipotarjeta = validator.getIssuer(creditCardNumber);
+    let validotipotarjeta = true;
+
+    if (mensajetipotarjeta == "") {
+        document.getElementById("tipoTarjeta").innerHTML = "Por ahora no se acepta el tipo de tarjeta, recomendamos ingresar MasterCard o Visa";
+        validotipotarjeta = false;
+    } else {
+        document.getElementById("tipoTarjeta").innerHTML = "Tipo Tarjeta : " + mensajetipotarjeta;
+    }
+
     if (validotipotarjeta) {
         //validar tarjeta correcta o incorrecta
 
         let isValid = validator.isValid(creditCardNumber);
         let mensajeValid = "Invalido";
+
         if (isValid) {
             mensajeValid = "Valido";
         }
+
         document.getElementById("resultado-tarjeta").innerHTML = "La tarjeta ingresada es: " + mensajeValid;
 
         //enmascarar numero de tarjeta
@@ -76,6 +75,19 @@ document.getElementById("nueva-tarjeta").addEventListener("click", () => {
     //metodo reset() limpiamos el contedido de html
 });
 
+
+document.getElementById("btn-salir").addEventListener("click", () => {
+    document.getElementById("logocabeza").style.display = "none";
+    document.getElementById("presentacion").style.display = "block";
+    document.getElementById("validar-nuevo").style.display = "none";
+    document.getElementById("validar").style.display = "none";
+
+    //Limpiar contenido
+    document.getElementById("frmValidarTarjeta").reset();
+    document.getElementById("num-tarjeta").innerHTML = "";
+    document.getElementById("resultado-tarjeta").innerHTML = "";
+    //metodo reset() limpiamos el contedido de html
+});
 
 //funcion para validar que el input solo acepte numeros
 document.getElementById("numero-tarjeta").addEventListener("keypress", function(event) {
