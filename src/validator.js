@@ -1,5 +1,6 @@
 const validator = { //creamos el objeto validator
-    // ...
+
+    // funcnion para validar el numero de tarjeta
     isValid(creditCardNumber) { //validamos el numero ingresado
 
         let array = creditCardNumber.split(""); //cada digito de la tarjeta colocamos en un array
@@ -39,6 +40,7 @@ const validator = { //creamos el objeto validator
 
     },
 
+    // funcnion para enmascarar el numero de tarjeta
     maskify(maskify) {
         let nummask = "";
 
@@ -52,8 +54,8 @@ const validator = { //creamos el objeto validator
         return nummask;
     },
 
+    //funcion para poder verificar la franquicia de la tgarjeta
     getIssuer(creditCardNumber) {
-        //Validar tipo de tarjeta
         let getIssuer = "";
 
         if (creditCardNumber[0] == "4") {

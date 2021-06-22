@@ -7,9 +7,7 @@ document.getElementById("cargar-tarjeta").addEventListener("click", () => {
     document.getElementById("validar").style.display = "block";
     document.getElementById("validar-nuevo").style.display = "none";
     document.getElementById("presentacion").style.display = "none";
-
 });
-
 //funcion para el boton  "validar tarjeta"
 document.getElementById("btn-validar").addEventListener("click", (e) => {
     e.preventDefault();
@@ -42,10 +40,12 @@ document.getElementById("btn-validar").addEventListener("click", (e) => {
 
         if (isValid) {
             mensajeValid = "Valido";
+            document.getElementById("nueva-tarjeta").innerHTML = "Guardar Tarjeta";
+        } else {
+            document.getElementById("nueva-tarjeta").innerHTML = "Validar Nuevo";
         }
 
         document.getElementById("resultado-tarjeta").innerHTML = "La tarjeta ingresada es: " + mensajeValid;
-
         //enmascarar numero de tarjeta
         let maskify = validator.maskify(creditCardNumber);
         //ingresamos al objeto y a la funcion y almacenamos el  resultado en una variable
@@ -65,17 +65,31 @@ document.getElementById("btn-validar").addEventListener("click", (e) => {
 
 //manejo de boton Validar nueva Tarjeta
 document.getElementById("nueva-tarjeta").addEventListener("click", () => {
-    document.getElementById("logocabeza").style.display = "block";
-    document.getElementById("presentacion").style.display = "none";
-    document.getElementById("validar-nuevo").style.display = "none";
-    document.getElementById("validar").style.display = "block";
+    let btnnuevatarjeta = document.getElementById("nueva-tarjeta").innerText;
 
-    //Limpiar contenido
-    document.getElementById("frmValidarTarjeta").reset();
-    document.getElementById("num-tarjeta").innerHTML = "";
-    document.getElementById("resultado-tarjeta").innerHTML = "";
+    if (btnnuevatarjeta == "Guardar Tarjeta") {
+        alert("Se guardó correctamente su tarjeta!");
+        document.getElementById("logocabeza").style.display = "none";
+        document.getElementById("presentacion").style.display = "block";
+        document.getElementById("validar-nuevo").style.display = "none";
+        document.getElementById("validar").style.display = "none";
+
+        //Limpiar contenido
+        document.getElementById("frmValidarTarjeta").reset();
+        document.getElementById("num-tarjeta").innerHTML = "";
+        document.getElementById("resultado-tarjeta").innerHTML = "";
+    } else {
+        document.getElementById("logocabeza").style.display = "block";
+        document.getElementById("presentacion").style.display = "none";
+        document.getElementById("validar-nuevo").style.display = "none";
+        document.getElementById("validar").style.display = "block";
+
+        //Limpiar contenido
+        document.getElementById("frmValidarTarjeta").reset();
+        document.getElementById("num-tarjeta").innerHTML = "";
+        document.getElementById("resultado-tarjeta").innerHTML = "";
+    }
 });
-
 
 document.getElementById("btn-salir").addEventListener("click", () => {
     document.getElementById("logocabeza").style.display = "none";
@@ -96,11 +110,10 @@ document.getElementById("numero-tarjeta").addEventListener("keypress", function(
         let charCode = (evt.which) ? evt.which : evt.keyCode;
         // charCode recupera lo escrito "? if coto"
         if ((charCode == 46 || charCode > 31) && (charCode < 48 || charCode > 57)) {
-            evt.preventDefault();
+            evt.preventDefault(); //detiene la accion
             return false;
         }
         return true;
-
     }
     return solonumeros(event);
-}, false);
+}, false); //culmina la funccion

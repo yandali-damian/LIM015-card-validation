@@ -1,14 +1,14 @@
-# Tarjeta de crédito válida
+# Tarjeta de crédito válida Q'ORI
 
 ## Índice
 
-* [1. Autor](#1-autor)
-* [2. Titulo Del Proyecto](#2-Titulo-Del-Proyecto)
-* [3. Descripción](#3-Descripción)
-* [4. Construcción](#4-Construcción)
-* [5. Diseño](#5-Diseño)
-* [6. Bibliografia](#6-Bibliografian)
-* [7. Agradecimiento](#7-agradecimiento)
+* [1. Autor](#1-autor-✒️)
+* [2. Titulo Del Proyecto](#2-titulo-del-proyecto-✨)
+* [3. Descripción](#3-descripción-📋)
+* [4. Construcción](#4-construcción-🛠️)
+* [5. Diseño](#5-diseño-✍)
+* [6. Bibliografia](#6-bibliografian-📖)
+* [7. Agradecimiento](#7-agradecimiento-🤗)
 
 ## 1. Autor ✒️
 
@@ -58,19 +58,21 @@ El diseño se realizo de la siguiente manera:
 
 ## 6. Bibliografia 📖
 
-https://www.w3schools.com/html/
+<https://www.w3schools.com/html/>
 
-https://developer.mozilla.org/es/docs/Web/API/Document/querySelector
+<https://developer.mozilla.org/es/docs/Web/API/Document/querySelector>
 
-https://lenguajejs.com/javascript/dom/que-es/
+<https://lenguajejs.com/javascript/dom/que-es/>
 
-https://uniwebsidad.com/libros/css/capitulo-2/selectores-basicos
+<https://uniwebsidad.com/libros/css/capitulo-2/selectores-basicos>
 
-https://editor.freelogodesign.org/es/logo/edit/b3784f1710bb4d86b183847bcd4549f6?template=1289&category=1&companyName=Q%27ORI
+<https://editor.freelogodesign.org/es/logo/edit/b3784f1710bb4d86b183847bcd4549f6?template=1289&category=1&companyName=Q%27ORI>
 
-https://www.figma.com
+<https://www.figma.com>
 
-https://cursosgratis.com.mx/marketing-digital/iconos-seo-para-titulos-en-google-y-youtube/
+<https://cursosgratis.com.mx/marketing-digital/iconos-seo-para-titulos-en-google-y-youtube/>
+
+<https://gist.github.com/rxaviers/7360908>
 
 ## 7. Agradecimiento 🤗
 
