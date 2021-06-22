@@ -8,6 +8,7 @@ document.getElementById("cargar-tarjeta").addEventListener("click", () => {
     document.getElementById("validar-nuevo").style.display = "none";
     document.getElementById("presentacion").style.display = "none";
 });
+
 //funcion para el boton  "validar tarjeta"
 document.getElementById("btn-validar").addEventListener("click", (e) => {
     e.preventDefault();
@@ -108,7 +109,7 @@ document.getElementById("numero-tarjeta").addEventListener("keypress", (event) =
     //primer parametro reconocer que evento va a realizar, segun lo que realice el siguiente parametro va a ejecutar 
     let charCode = (event.which) ? event.which : event.keyCode;
     // charCode recupera lo escrito "? if coto"
-    if ((charCode == 46 || charCode > 31) && (charCode < 48 || charCode > 57)) {
+    if ((charCode == 46 || charCode > 31) && (charCode < 48 || charCode > 57)) { //Si es una letra se detiene el evento
         event.preventDefault(); //detiene la accion
         return false;
     }

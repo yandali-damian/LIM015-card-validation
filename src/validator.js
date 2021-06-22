@@ -14,7 +14,7 @@ const validator = { //creamos el objeto validator
                 if (opr >= 10) {
                     let numArray = opr.toString().split("");
                     let sumaDigitos = 0;
-                    // opr = numArray.reduce(function(a, b) { //en la funcion reduce sumamos los elementos del arreglo donde a=acumulador y b=valor actual
+                    // opr = numArray.reduce(function(a, b) { //metodo reduce sumamos los elementos del arreglo donde a=acumulador y b=valor actual
                     //     return parseInt(a) + parseInt(b);
                     // }, 0);
                     for (let index = 0; index < numArray.length; index++) {
@@ -31,7 +31,7 @@ const validator = { //creamos el objeto validator
         }
 
 
-        let result = sumaTotal % 10;
+        let result = sumaTotal % 10; //calculamos el modulo
 
         if (result == 0)
             return true;
