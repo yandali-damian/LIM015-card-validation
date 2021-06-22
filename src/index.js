@@ -104,16 +104,13 @@ document.getElementById("btn-salir").addEventListener("click", () => {
 });
 
 //funcion para validar que el input solo acepte numeros
-document.getElementById("numero-tarjeta").addEventListener("keypress", function(event) {
+document.getElementById("numero-tarjeta").addEventListener("keypress", (event) => {
     //primer parametro reconocer que evento va a realizar, segun lo que realice el siguiente parametro va a ejecutar 
-    function solonumeros(evt) {
-        let charCode = (evt.which) ? evt.which : evt.keyCode;
-        // charCode recupera lo escrito "? if coto"
-        if ((charCode == 46 || charCode > 31) && (charCode < 48 || charCode > 57)) {
-            evt.preventDefault(); //detiene la accion
-            return false;
-        }
-        return true;
+    let charCode = (event.which) ? event.which : event.keyCode;
+    // charCode recupera lo escrito "? if coto"
+    if ((charCode == 46 || charCode > 31) && (charCode < 48 || charCode > 57)) {
+        event.preventDefault(); //detiene la accion
+        return false;
     }
-    return solonumeros(event);
-}, false); //culmina la funccion
+    return true;
+}); //culmina la funccion
